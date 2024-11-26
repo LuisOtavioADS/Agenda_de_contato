@@ -1,26 +1,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DetalheContatoActivity">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/tvDetalheNome"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Nome"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:padding="8dp" />
 
     <TextView
         android:id="@+id/tvDetalheTelefone"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        android:text="Telefone"
+        android:textSize="18sp"
+        android:padding="8dp" />
 
     <TextView
         android:id="@+id/tvDetalheEndereco"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        android:text="Endereço"
+        android:textSize="18sp"
+        android:padding="8dp" />
 </LinearLayout>

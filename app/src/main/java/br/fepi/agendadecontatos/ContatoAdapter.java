@@ -39,7 +39,7 @@ public class ContatoAdapter extends RecyclerView.Adapter<ContatoAdapter.ContatoV
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetalheContatoActivity.class);
-                intent.putExtra("contato", (CharSequence) contato);
+                intent.putExtra("contato", contato); // Passar o objeto Contato
                 context.startActivity(intent);
             }
         });

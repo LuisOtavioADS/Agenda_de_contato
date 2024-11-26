@@ -27,3 +27,4 @@ public class DetalheContatoActivity extends AppCompatActivity {
         }
     }
 }
+
