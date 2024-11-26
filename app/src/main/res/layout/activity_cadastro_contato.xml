@@ -46,18 +46,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTelefone" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSalvarContato"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="137dp"
+        android:layout_height="37dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/button_style"
         android:padding="8dp"
         android:text="Salvar"
-        android:textColor="@color/black"
-        android:background="@drawable/button_gradient"
+        android:textColor="#858383"
+        android:textSize="12dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEndereco" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="26dp"
+        android:fontFamily="@font/caveat"
+        android:text="AGENDA DE CONTATOS"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/etNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

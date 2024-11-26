@@ -1,9 +1,14 @@
 package br.fepi.agendadecontatos;
 
 import android.content.Intent;
+import android.graphics.Color; // Importando a classe Color para usar cores
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView; // Importando TextView
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewContacts;
     private ContatoAdapter contatoAdapter;
     private List<Contato> contatoList;
+    private TextView textViewChangeColor; // Definindo o TextView para mudar a cor
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnAddContact = findViewById(R.id.btnAddContact);
         recyclerViewContacts = findViewById(R.id.recyclerViewContacts);
+        textViewChangeColor = findViewById(R.id.textView2); // Inicializando o TextView
 
         contatoList = new ArrayList<>();
         contatoAdapter = new ContatoAdapter(contatoList);
@@ -39,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
+        // Mudando a cor do TextView assim que a Activity for criada
+        changeTextColor(textViewChangeColor, Color.BLACK);
+    }
+
+    // Função para mudar a cor do TextView
+    private void changeTextColor(TextView textView, int color) {
+        // Usando o SpannableString para mudar a cor do texto
+        String text = textView.getText().toString(); // Pegando o texto atual do TextView
+        SpannableString spannableString = new SpannableString(text);
+
+        // Aplicando a cor ao texto inteiro ou uma parte dele
+        spannableString.setSpan(new ForegroundColorSpan(color), 0, text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Definindo o novo texto com a cor alterada
+        textView.setText(spannableString);
     }
 
     @Override
@@ -50,5 +72,4 @@ public class MainActivity extends AppCompatActivity {
             contatoAdapter.notifyDataSetChanged();
         }
     }
-
 }
